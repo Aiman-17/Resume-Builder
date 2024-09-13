@@ -1,0 +1,259 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Hamburger menu icon */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+}
+
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-text {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .navbar {
+    display: flex;
+  }
+  main {
+    display: flex;
+    padding: 50px;
+    background-color: #fff0eb;
+    margin-top: 53px;
+  } 
+  .profile {
+    flex: 1;
+    text-align: center;
+  }
+  .profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    margin-top: 15px;
+  }
+  .profile h2 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #2d0b00;
+  }
+  .profile p {
+    margin-top: 0;
+    color: #666;
+  }
+  .blue-line {
+    width: 50px;
+    height: 2px;
+    background-color: #0066ff;
+    margin: 10px auto;
+  }
+  .content {
+    flex: 2;
+    padding-left: 50px;
+  }
+  hz-line{
+    width: 50px;
+    height: 2px;
+    background-color: #0066ff;
+    margin: 10px auto; 
+  }
+  h1 {
+    font-size: 50px;
+    margin-bottom: 0;
+    top: 0px;
+    color:#2d0b00;
+  }
+  .subtitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .buttons {
+    margin-bottom: 30px;
+    cursor:pointer;
+  }
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 50px;
+  }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 30px;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10rem;
+  transition: all 0.02s;
+  font-weight: bold;
+  cursor: pointer;
+  color: rgb(37, 37, 37);
+  z-index: 0;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+  background: rgb(193, 228, 248);
+  color: rgb(33, 0, 85);
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.hoverEffect {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hoverEffect div {
+  background: rgb(222, 0, 75);
+  background: linear-gradient(
+    90deg,
+    rgba(222, 0, 75, 1) 0%,
+    rgba(191, 70, 255, 1) 49%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 40rem;
+  width: 10rem;
+  height: 10rem;
+  transition: 0.4s;
+  filter: blur(20px);
+  animation: effect infinite 3s linear;
+  opacity: 0.5;
+}
+
+.button:hover .hoverEffect div {
+  width: 8rem;
+  height: 8rem;
+}
+
+@keyframes effect {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.Documents-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
+  height: 45px;
+  border: none;
+  padding: 0px 15px;
+  border-radius: 25px;
+  background-color: #2d0b00;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  bottom: -7px;
+  margin-left: 12px;
+}
+.folderContainer {
+  width: 40px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+.fileBack {
+  z-index: 1;
+  width: 80%;
+  height: auto;
+}
+.filePage {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.3s ease-out;
+}
+.fileFront {
+  width: 85%;
+  height: auto;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.95;
+  transform-origin: bottom;
+  transition: all 0.3s ease-out;
+}
+.text {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.Documents-btn:hover .filePage {
+  transform: translateY(-5px);
+}
+.Documents-btn:hover {
+  background-color: #2d0b00;
+}
+.Documents-btn:active {
+  transform: scale(0.95);
+}
+.Documents-btn:hover .fileFront {
+  transform: rotateX(30deg);
+}
+
+
+
+
+  @media (max-width: 768px) {
+ 
+    main {
+      flex-direction: column;
+      padding: 20px;
+    }
+    .content {
+      padding-left: 0;
+      margin-top: 30px;
+    }
+    h1 {
+      font-size: 48px;
+    }
+    .subtitle {
+      font-size: 20px;
+    }
+  }
+ 

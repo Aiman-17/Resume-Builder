@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Preview</title>
+  <style>
+    /* Basic styling for the resume preview */
+    .resume-preview {
+      width: 80%;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    .resume-preview h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resume-preview">
+    <h2>Resume Preview</h2>
+    <p><strong>Name:</strong> <span id="previewName"></span></p>
+    <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+    <p><strong>Phone:</strong> <span id="previewPhone"></span></p>
+    <p><strong>Skills:</strong> <span id="previewSkills"></span></p>
+    <p><strong>Education:</strong> <span id="previewEducation"></span></p>
+  </div>
+
+  <!-- Buttons for sharing, printing, and downloading -->
+  <button onclick="window.print()">Print</button>
+  <button onclick="downloadResume()">Download as PDF</button>
+
+  <script>
+    // Load data from localStorage and display in the preview
+    document.getElementById('previewName').textContent = localStorage.getItem('name');
+    document.getElementById('previewEmail').textContent = localStorage.getItem('email');
+    document.getElementById('previewPhone').textContent = localStorage.getItem('phone');
+    document.getElementById('previewSkills').textContent = localStorage.getItem('skills');
+    document.getElementById('previewEducation').textContent = localStorage.getItem('education');
+
+    // Function to download resume as a PDF
+    function downloadResume() {
+      const element = document.querySelector('.resume-preview');
+      const resumeHTML = element.innerHTML;
+      
+      const link = document.createElement('a');
+      link.href = 'data:text/html;charset=UTF-8,' + encodeURIComponent(resumeHTML);
+      link.download = 'resume.html';
+      link.click();
+    }
+  </script>
+</body>
+</html>
